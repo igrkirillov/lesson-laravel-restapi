@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "33d4b18d-6cd7-495a-9958-02fab5d595ed",
+		"name": "Laravel-restapi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "cars",
+			"item": [
+				{
+					"name": "cars all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "2|Ev3x3DmT8HsaMSB8qh4CEVhS67fv5kQb8cTKRgtw169947d3"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/api/cars"
+					},
+					"response": []
+				},
+				{
+					"name": "cars create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "4|PodpHOdcuO2WKDKRdSsmzQkOwMofb2aA8YGupOlJa17bbb40"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/cars?brand=BMW&model=X5&price=5000.50",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cars"
+							],
+							"query": [
+								{
+									"key": "brand",
+									"value": "BMW"
+								},
+								{
+									"key": "model",
+									"value": "X5"
+								},
+								{
+									"key": "price",
+									"value": "5000.50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cars by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|PkyNQZeKgrZQcjTN8EgKozJHO1LGjI3nXJZmn82c7d16edc8"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/cars/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cars",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "car delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|PkyNQZeKgrZQcjTN8EgKozJHO1LGjI3nXJZmn82c7d16edc8"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/cars/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cars",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Access-Control-Allow-Origin",
+						"value": "*",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/register?name=Name12&email=name21@mail.ru&password=name",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"register"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Name12"
+						},
+						{
+							"key": "email",
+							"value": "name21@mail.ru"
+						},
+						{
+							"key": "password",
+							"value": "name"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/tokens/create?email=name212@mail.ru&password=name",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tokens",
+						"create"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Name",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "name212@mail.ru"
+						},
+						{
+							"key": "password",
+							"value": "name"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "2|Ev3x3DmT8HsaMSB8qh4CEVhS67fv5kQb8cTKRgtw169947d3"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/tokens/logout"
+			},
+			"response": []
+		},
+		{
+			"name": "welcome",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// pm.sendRequest({",
+					"//     url: \"http://127.0.0.1:8000/\",",
+					"//     method: \"GET\"",
+					"// }, function (err, res, { cookies }) {",
+					"//     if (!err) {",
+					"//         const xsrfToken = cookies.has('XSRF-TOKEN') ? cookies.get('XSRF-TOKEN') : null;",
+					"//         if (xsrfToken) {",
+					"//             // Add X-XSRF-TOKEN to the header of the subsequent request",
+					"//             console.log('xsrfToken', xsrfToken);",
+					"//             pm.request.headers.add({ key: 'X-XSRF-TOKEN', value: xsrfToken });",
+					"//         } else {",
+					"//             console.error('XSRF-TOKEN not found in cookies');",
+					"//         }",
+					"//     } else {",
+					"//         console.error('Error fetching CSRF token:', err);",
+					"//     }",
+					"// });"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
